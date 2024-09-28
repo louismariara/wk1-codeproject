@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge2</title>
+</head>
+<body>
+    <button onclick="calculateSpeed()">Calculate Speed</button>
+<script>
+function calculateSpeed() {
+    const speed = parseInt(prompt("Enter your speed: "));
+    const speedlimit = 70;
+    let points = 0
+    if (speed < 70) {
+        console.log("Ok");
+    }
+    else {
+        points = Math.floor ((speed -70)/5)
+    if (points > 12) {
+        console.log('License Suspended');
+    } else {
+       console.log(  '+ points');
+       
+    }
+  }
+}
+</script>
+</body>
+</html>
+
