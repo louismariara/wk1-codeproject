@@ -6,21 +6,22 @@
     <title>challenge2</title>
 </head>
 <body>
-    <button onclick="calculateSpeed()">Calculate Speed</button>
-<script>
-function calculateSpeed() {
-    const speed = parseInt(prompt("Enter your speed: "));
-    const speedlimit = 70;
-    let points = 0
-    if (speed < 70) {
-        console.log("Ok");
+    <button onclick="calculateSpeed()">Calculate Speed</button>  <!-- button that prompts to calculate speed -->
+  <!-- beginning of javascript code -->
+<script>  
+function calculateSpeed() {  // function to calculate speed
+    const speed = parseInt(prompt("Enter your speed: "));  // prompt user to enter speed
+    const speedlimit = 70;  // sets the speedlimit to 70
+    let points = 0  // sets points variable to 0
+    if (speed < 70) {      // for speed less than 70(speedlimit)
+        console.log("Ok");  //  if less return ok
     }
     else {
-        points = Math.floor ((speed -70)/5)
-    if (points > 12) {
-        console.log('License Suspended');
+        points = Math.floor ((speed -70)/5)  // if more than speed limit calculate the points 
+        if (points > 12) {   //    calculate if points are greater than 12
+            console.log('License Suspended'); // if more return license suspended
     } else {
-       console.log(  '+ points');
+       console.log( 'points' + points);  // if less than 12 calculate points and return
        
     }
   }

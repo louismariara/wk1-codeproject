@@ -6,9 +6,11 @@
     <title>challenge1</title>
 </head>
 <body>
-    <button onclick="displayGrade()">Get Grade</button>
-    <script>
-        function studentgrade(marks) {
+    <button onclick="displayGrade()">Get Grade</button> <!-- button that prompts display grade -->
+   <!-- beginning of javascript code -->
+   <script>
+        function studentgrade(marks) {      // function to give grades according to marks
+
         if (marks > 79) {    
             return "A";      //    for marks greater than 79
         }
@@ -24,10 +26,11 @@
         else
             return 'E';   //    for marks less than 40
         }
-        function displayGrade() {
-            const marks = parseInt(prompt("Enter your marks: "));
-            const grade = studentgrade(marks);
-             console.log("Your grade is: " + grade);
+        function displayGrade() {    // function to display the grade
+            const marks = parseInt(prompt("Enter your marks: ")); // prompt user to enter grade
+            const grade = studentgrade(marks);  // gives the grade based with the marks
+            console.log("Your grade is: " + grade);   //  display grade in the console
+
 }
         </script>
 </body>

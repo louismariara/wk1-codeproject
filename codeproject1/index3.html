@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge3</title>
+</head>
+<body>
+    <button onclick="calculatenetSalary()">Calculate Net Salary</button>
+<script>
+function calculatenetSalary(basicSalary, benefits) {  // function to calculate net Salary
+const NHIF_Deductions = 1700; //  NHIF_Deductions as a constant
+const NSSF_Rate = 0.06; //  NSSF_Rate as a constant
+    let PAYE;      // initialise the PAYE as variable
+    // calculate the total salary by adding the basic salary and benefits
+    const totalSalary = basicSalary + benefits;
+  // If the total salary is less than or equal to 24,000, calculate PAYE as 10% of the total salary
+    if (totalSalary <= 24000) { 
+        PAYE = totalSalary * 0.1;
+    }
+     // If the total salary is less than or equal to 32,333, calculate PAYE as 25% of the total salary
+    else if(totalSalary<= 32333){
+        PAYE = totalSalary * 0.25;   
+    }
+    // If the total salary is less than or equal to 800,000, calculate PAYE as 32.5% of the total salary
+    else if(totalSalary <= 800000){
+        PAYE = totalSalary * 0.325;
+    }
+    // If the total salary is greater than 800,000, calculate PAYE as 35% of the total salary
+    else{
+        PAYE = totalSalary * 0.35;
+    }
+    
+ // Calculate the NSSF deductions by multiplying total salary by NSSF_Rate
+const nssfDeductions=(totalSalary * NSSF_Rate);
+// Calculate the net salary by subtracting the PAYE, NSSF deductions, and NHIF deductions from the total salary
+const netSalary =totalSalary - (PAYE + nssfDeductions + NHIF_Deductions);
+//console  Log the gross salary, PAYE, NHIF deductions, NSSF deductions, and net salary to the console
+console.log("Gross Salary:", totalSalary);
+  console.log("PAYE:", PAYE);
+  console.log("NHIF Deductions:", NHIF_Deductions);
+  console.log("NSSF Deductions:", nssfDeductions);
+  console.log("Net Salary:", netSalary);  
+}
+const basicSalary = 50000;
+const benefits = 10000;
+calculatenetSalary(basicSalary, benefits)
+
+</script>
+</body>
+</html>
